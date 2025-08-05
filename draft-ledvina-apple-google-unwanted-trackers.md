@@ -658,16 +658,17 @@ The accessory manufacturer SHALL provide both a text description of how to enabl
 For security reasons, the identifier payload returned from an accessory in the paired state SHALL be encrypted.
 
 ### Identifier over NFC {#identifier-over-nfc}
-For those accessories that support identifier retrieval over NFC, an associated accessory SHALL advertise the whole URL with arguments as the payload over NFC. The payload SHALL look like the URL shown below.
-"https://{URL}?pid=%04x&b=%02x&fv=%08x&e=%s"
+For those accessories that support identifier retrieval over NFC, an associated accessory SHALL advertise the whole URL with arguments as the payload over NFC. The payload SHALL be formatted like this "https://{URL}?pid=%s&b=%s&fv=%s&e=%s“ where the battery level argument is optional. It MAY include additional optional arguments, for example "https://{URL}?pid=%s&b=%s&fv=%s&e=%s&optA=%s&optB=%s“, where the optional arguments and their associated values are defined by the accessory manufacturer.
+
+The platform SHALL pass the URL to the associated website and not strip, edit, or append any information.
 
 |  URL argument | URL Argument Type | Notes                          | Reference                                |
 |:-------------:|:-----------------:|:------------------------------:|:----------------------------------------:|
-| b             | hex string        | Battery Level  (Optional)      | [Battery Level](#battery-level)          |
-| bt            | hex string        | BT Mac address (Optional)      | [MAC address](#mac-address)              |
-| fv            | hex string        | Firmware version (Optional)    | [Firmware version](#firmware-version)    |
-| e             | hex string        | Encrypted Identifier (Required)| [Identifier Payload](#identifier-payload)|
-| pid           | hex string        | Product Data (Required)        | [Product Data](#product-data)            |
+| b             | ASCII hex string  | Battery Level (Optional)       | [Battery Level](#battery-level)          |
+| bt            | ASCII hex string  | BT Mac address (Optional)      | [MAC address](#mac-address)              |
+| fv            | ASCII hex string  | Firmware version (Required)    | [Firmware version](#firmware-version)    |
+| e             | ASCII hex string  | Encrypted Identifier (Required)| [Identifier Payload](#identifier-payload)|
+| pid           | ASCII hex string  | Product Data (Required)        | [Product Data](#product-data)            |
 {: #table-temp-identifier-lookup-url-arguments title="Identifier Lookup URL-arguments"}
 
 The URL SHALL be hosted by the network provider. The URL SHALL decrypt the identifier payload and return the identifier of the accessory in a form that can be rendered in the platform's HTML view.
