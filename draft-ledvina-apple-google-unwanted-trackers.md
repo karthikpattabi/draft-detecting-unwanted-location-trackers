@@ -884,14 +884,14 @@ An entry in this registry contains the following fields:
 ### Temporary Registry
 Until this an IANA registry is available, the values in this registry are listed in {{table-temp-network-registry}}.
 
-|  Network ID | Network Provider |
-|:------------:|:---------------:|
-|  0x00        | Reserved        |
-|  0x01        | Apple  Inc.     |
-|  0x02        | Google LLC      |
-|  0x03        | Samsung         |
-|  0x04        | Amazon          |
-|  0xFF        | Reserved        |
+|  Network ID | Network Provider     |
+|:------------:|:-------------------:|
+|  0x00        | Reserved            |
+|  0x01        | Apple  Inc.         |
+|  0x02        | Google LLC          |
+|  0x03        | Samsung Electronics |
+|  0x04        | Amazon              |
+|  0xFF        | Reserved            |
 {: #table-temp-network-registry title="Finding Network Registry"}
 
 
