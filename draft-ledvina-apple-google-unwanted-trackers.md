@@ -1053,7 +1053,7 @@ A network provider SHALL host a  webpage that displays ownership information, in
 
 ### URL Format and Query Params
 
-[https://{URL}?pid=%s&b=%s&fv=%s&e=%s](https://{URL}?pid=%s&b=%s&fv=%s&e=%s)  
+[https://{URL}?pid=%s&b=%s&fv=%s&e=%s](https://{URL}?pid=%s&b=%s&fv=%s&e=%s)
 ***Note:** The base URL is defined by each network provider. The query parameters listed in {{table-identifier-lookup-query-params}} are standardized across all network providers.*
 
 | Key | URL Param Type | Notes | Reference  |
